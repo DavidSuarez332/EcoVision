@@ -1,4 +1,130 @@
-index.html
-assets/
-    images/
-EcoVision.pdf   (optional)
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>EcoVision – Solar Panel Cleanliness Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        img {
+            max-width: 500px;
+            display: block;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>EcoVision – Automated Solar Panel Cleanliness Detection</h1>
+
+<p>
+EcoVision is a computer vision system designed to automatically classify solar panel images as either
+<strong>clean</strong> or <strong>dirty</strong> using a convolutional neural network. Because the efficiency of photovoltaic
+(PV) systems drops significantly when panels accumulate dust, debris, or biological matter, automating the
+cleanliness detection process can reduce maintenance costs and optimize energy output. This project integrates
+deep learning with real-world solar panel imaging to demonstrate a scalable and data-driven inspection pipeline.
+</p>
+
+<hr>
+
+<h2>Problem & Motivation</h2>
+<p>
+Solar energy production is heavily affected by environmental contaminants such as dust, pollen, bird droppings,
+and atmospheric pollution. Studies show that without regular cleaning, solar panels can lose between
+<strong>15%–25%</strong> of their annual power output. Traditional inspection methods involve manual visual checks or
+scheduled cleaning intervals, both of which are inefficient, labor-intensive, and not aligned with actual dirt
+accumulation patterns.
+<br><br>
+The motivation behind EcoVision is to replace these manual inspections with an automated system capable of
+analyzing images captured by drones, mounted cameras, or IoT sensors. With a reliable real-time classifier,
+solar farms can intelligently schedule cleaning only when necessary, reducing water usage, lowering operational
+costs, and improving power generation efficiency across large-scale installations.
+</p>
+
+<hr>
+
+<h2>Technical Approach (AlexNet)</h2>
+<p>
+The classification model is based on a modified <strong>AlexNet</strong> architecture, one of the foundational deep learning
+models for large-scale image recognition. AlexNet consists of five convolutional layers followed by three fully
+connected layers, using ReLU activations and dropout regularization to reduce overfitting. For this project,
+the network was adapted to a binary classification problem (clean vs. dirty), and the final softmax layer was
+replaced with a two-node output layer.
+<br><br>
+Images were preprocessed by:
+<ul>
+    <li>Resizing all inputs to <strong>224 × 224</strong> pixels</li>
+    <li>Normalizing pixel intensities to improve gradient stability</li>
+    <li>Applying data augmentation: horizontal/vertical flips, rotations, and brightness adjustments</li>
+</ul>
+These augmentations were critical for improving model generalization, given the variability of outdoor lighting
+conditions and surface reflectivity in real solar panel images.
+<br><br>
+The model was trained for <strong>10–20 epochs</strong> using stochastic gradient descent with momentum. The cross-entropy loss
+function measured the error between predicted and true labels, and the training loss consistently decreased,
+indicating successful learning of distinguishing features such as dirt streaks, dust patterns, and changes in surface reflectivity.
+</p>
+
+<hr>
+
+<h2>Visualizations</h2>
+<p>
+Below are the key visualizations produced during model training and evaluation. These plots help validate model
+performance and diagnose potential issues such as overfitting or class imbalance.
+</p>
+
+<img src="assets/images/loss_curve.png" alt="Loss Curve">
+<img src="assets/images/accuracy_curve.png" alt="Accuracy Curve">
+<img src="assets/images/confusion_matrix.png" alt="Confusion Matrix">
+
+<p>
+The loss curve demonstrates how the model improved with each epoch, while the confusion matrix highlights the
+relative strengths and weaknesses of the classifier. These visualizations provide a deeper understanding of
+how effectively the model learned discriminative features between clean and dirty panels.
+</p>
+
+<hr>
+
+<h2>Results</h2>
+<p>
+The trained AlexNet model achieved an overall accuracy between <strong>85% and 95%</strong> depending on augmentation settings
+and train-test splits. The downward-trending loss curve confirms that the model successfully minimized
+classification error over time. Most false classifications occurred on borderline examples, such as panels with
+partial dirt coverage or shadows that visually resembled debris.
+<br><br>
+Precision and recall scores also indicated that the model performs reliably in identifying heavily soiled
+panels, which is the most operationally important category. The results demonstrate that even with a relatively
+simple architecture like AlexNet, significant automated inspection capability can be achieved for solar
+maintenance applications.
+</p>
+
+<hr>
+
+<h2>Takeaways</h2>
+<ul>
+    <li>Deep learning provides an efficient and scalable solution to solar panel cleanliness monitoring.</li>
+    <li>Data augmentation is essential for handling real-world variations in lighting and surface appearance.</li>
+    <li>A model like AlexNet can perform strongly even with a binary classification problem and a modest dataset.</li>
+    <li>EcoVision offers potential for integration with drones, IoT devices, and solar farm management software.</li>
+    <li>The project demonstrates how computer vision can reduce maintenance costs and improve renewable energy output.</li>
+</ul>
+
+<hr>
+
+<h2>Presentation</h2>
+<p>
+<a href="https://ecovision-q3hnim3.gamma.site" target="_blank">
+Click here to view the interactive Gamma presentation.
+</a>
+</p>
+
+</body>
+</html>
+
