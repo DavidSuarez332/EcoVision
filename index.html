@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>EcoVision – Solar Panel Cleanliness Detection</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #f4f7fa;
+        color: #1f2b38;
+        line-height: 1.6;
+    }
+
+    header {
+        background: linear-gradient(to right, #003366, #0066cc);
+        color: white;
+        padding: 60px 40px;
+        text-align: center;
+    }
+    header h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+    header p {
+        font-size: 1.25rem;
+        opacity: 0.95;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .section {
+        background: white;
+        margin: 40px auto;
+        max-width: 900px;
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+        color: #004a99;
+        border-left: 6px solid #ffcc00;
+        padding-left: 12px;
+        font-size: 1.8rem;
+        margin-top: 0;
+    }
+
+    embed, iframe {
+        width: 100%;
+        height: 900px;
+        border-radius: 10px;
+        margin-top: 20px;
+        box-shadow: 0px 6px 18px rgba(0,0,0,0.15);
+        border: none;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+        color: #003366;
+        font-size: 0.9rem;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>EcoVision</h1>
+    <p>Automated Solar Panel Cleanliness Detection Using Deep Learning and AlexNet-Based Computer Vision</p>
+</header>
+
+<div class="section">
+    <h2>Problem & Motivation</h2>
+    <p>
+        Solar photovoltaic (PV) arrays experience significant efficiency loss due to surface contamination such as dust,
+        pollen, ash, mineral deposits, and bird droppings. Studies show that accumulated debris can reduce energy
+        output by <strong>15–25%</strong> annually.
+    </p>
+    <p>
+        Manual inspection and cleaning cycles are labor-intensive and cost-inefficient. EcoVision provides an automated
+        solution using deep learning to classify panel cleanliness from imagery.
+    </p>
+</div>
+
+<div class="section">
+    <h2>Technical Approach (AlexNet-Based Classification)</h2>
+    <ul>
+        <li>Input normalization and resizing to 224×224 pixels.</li>
+        <li>Data augmentation: random flips, rotations, brightness shifts, contrast jitter.</li>
+        <li>Training for 10–20 epochs using SGD with momentum.</li>
+        <li>Monitoring training/validation loss curves.</li>
+        <li>Evaluating robustness via confusion matrix analysis.</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>Training Visualizations</h2>
+    <p>Below are the training graphs and diagnostic charts embedded as a PDF:</p>
+    <iframe 
+        src="EcoGraphs.pdf" 
+        width="100%" 
+        height="900px" 
+        style="border:none; border-radius:10px; box-shadow:0px 6px 18px rgba(0,0,0,0.15);">
+    </iframe>
+</div>
+
+<div class="section">
+    <h2>Results</h2>
+    <p>
+        EcoVision achieved 85–95% classification accuracy depending on augmentation and dataset composition.
+    </p>
+</div>
+
+<div class="section">
+    <h2>Key Takeaways</h2>
+    <ul>
+        <li>Deep learning is scalable for solar panel inspection.</li>
+        <li>AlexNet effectively captures dirt-related textures.</li>
+        <li>EcoVision reduces operational costs and improves PV performance.</li>
+        <li>Approach can extend to other renewable energy monitoring tasks.</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>Project Presentation</h2>
+    <p>Full EcoVision project presentation:</p>
+    <embed src="EcoVision.pdf" type="application/pdf">
+</div>
+
+<footer>
+    EcoVision • Solar Panel Cleanliness Detection • 2025
+</footer>
+
+</body>
+</html>
